@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: white;
+    --secondary: royalblue;
+    --tertiary: violet;;
+    font-size: 100%;
+}
+
+main {
+
+}
+
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    display: inline-block;
+    padding: 10px 15px;
+    background:royalblue;
+    font-size: 2.2rem;
+    border-radius: 12px;
+    position: relative;
+    top: -3px;
+  }
+
+  .btn:hover {
+    top: -2px;
+    background: violet;
+  }
