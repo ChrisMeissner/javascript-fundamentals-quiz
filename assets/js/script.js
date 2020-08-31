@@ -118,7 +118,6 @@ function submit() {
 function goBack() {
     highScoreScreen.setAttribute('class', 'hide');
     startScreen.removeAttribute('class');
-    timerEl.removeAttribute
     
 }
 
