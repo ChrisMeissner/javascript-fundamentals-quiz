@@ -1,41 +1,27 @@
-* {
-    box-sizing: border-box;
+header {
+    justify-content: space-between;
+    display: flex;
 }
 
-:root {
-    --primary: white;
-    --secondary: royalblue;
-    --tertiary: violet;;
-    font-size: 100%;
+header div a{
+    text-decoration: none;
+    color: violet;
 }
 
 main {
-
+    justify-content: center;
 }
 
-body {
-    background: white;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+button {
+    background: midnightblue;
+    color: white;
+    grid-auto-columns: auto;
 }
 
-.btn {
-    outline: none;
-    border: none;
-    display: inline-block;
-    padding: 10px 15px;
-    background:royalblue;
-    font-size: 2.2rem;
-    border-radius: 12px;
-    position: relative;
-    top: -3px;
-  }
-
-  .btn:hover {
-    top: -2px;
+button:hover {
     background: violet;
-  }
+} 
+
+.hide {
+    display: none;
+}
