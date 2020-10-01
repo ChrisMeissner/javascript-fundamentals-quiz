@@ -98,12 +98,19 @@ function gameEnd() {
 }
 
 function submit() {
-    var initials = document.getElementById('initial');
+    var initialsEl = document.getElementById('initial');
+    var initials = initialsEl.value.trim();
+    var playerScore = {score:time, initials:initials}
     highScoreScreen.removeAttribute('class');
     endScreen.setAttribute('class', 'hide');
-    localStorage.setItem('initial', JSON.stringify(initials));
-    localStorage.setItem('timer', time);
-    scoreList.textContent = initials + " - " + time;
+    var allScores = JSON.parse(window.localStorage.getItem('scores')) || []
+    allScores.push(playerScore);
+    window.localStorage.setItem('scores', JSON.stringify(allScores));
+    scoreList.textContent = "";
+    for(var i = 0; i < allScores.length; i++) {
+        scoreList.textContent = scoreList.textContent + "\n" + i + 1 + ". " + allScores[i].initials + " - " + allScores[i].score;
+    }
+    
     }
 
     //Get the initials
@@ -122,7 +129,8 @@ function goBack() {
 }
 
 function clear() {
-
+    window.localStorage.setItem('scores', "");
+    scoreList.textContent = "";
 
 }
 
