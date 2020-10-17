@@ -24,18 +24,28 @@ var questionNumber = 0;
 var questionArray = [
     {
         q: 'Commonly used data types DO Not Include:',
-        c: ['red', 'blue', 'yellow', 'white'],
-        a: 'blue'
+        c: ['strings', 'booleans', 'alerts', 'numbers'],
+        a: 'alerts'
     },
     {
         q: 'The condition in an if / else statement is enclosed with _____.',
-        c: ['red2', 'blue2', 'yellow2', 'white2'],
-        a: 'red2'
+        c: ['quotes', 'curly brackets', 'parenthesis', 'square brackets'],
+        a: 'curly brackets'
     },
     {
         q: 'Arrays in Javascript can be used to store _____.',
-        c: ['red3', 'blue3', 'yellow3', 'white3'],
-        a: 'white3'
+        c: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+        a: 'all of the above'
+    },
+    {
+        q: 'String values must be enclosed within _____ when being assigned to variables.',
+        c: ['commas', 'curly brackets', 'quotes', 'parenthesis'],
+        a: 'quotes'
+    },
+    {
+        q: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        c: ['JavaScript', 'terminal/bash', 'for loops', 'console log'],
+        a: 'console log'
     }
 ];
 
