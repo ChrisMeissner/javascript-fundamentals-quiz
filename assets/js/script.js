@@ -12,7 +12,7 @@ var submitBtn = document.getElementById('submitInit');
 var goBackBtn = document.getElementById('backBtn');
 var clearHighScoreHistoryBtn = document.getElementById('clearBtn');
 var highScoreScreen = document.getElementById('highScoreScreen');
-var scoreList = document.getElementById('scoreList')
+var scoreList = document.getElementById('scoreList');
 
 var clockInterval;
 var gameOver = false;
@@ -59,6 +59,7 @@ function startQuiz() {
 function clock() {
    
     if(time <= 0 || gameOver) {
+        timerEl.textContent = "";
         gameEnd ();
     } else {
         timerEl.textContent = time;
@@ -75,7 +76,7 @@ var questions = function () {
         var choice = document.createElement('button');
         choice.setAttribute('value', currentQuestion.c[i]);
         choices.setAttribute('class', 'choice')
-        choice.textContent = (i + 1) + ". " + currentQuestion.c[i];
+        choice.innerHTML = (i + 1) + ". " + currentQuestion.c[i];
         choice.onclick = checkAnswer;
         choicesEl.appendChild(choice);
     }
@@ -104,7 +105,7 @@ function gameEnd() {
     var score = document.getElementById('finalScore');
     score.textContent = time;
     timerEl.setAttribute('class', 'hide');
-    clearInterval(clockInterval);
+    clearInterval(clockInterva);
 }
 
 function submit() {
@@ -118,30 +119,20 @@ function submit() {
     window.localStorage.setItem('scores', JSON.stringify(allScores));
     scoreList.textContent = "";
     for(var i = 0; i < allScores.length; i++) {
-        scoreList.textContent = scoreList.textContent + "\n" + i + 1 + ". " + allScores[i].initials + " - " + allScores[i].score;
+        scoreList.textContent = scoreList.textContent + (i+1) + ". " + allScores[i].initials + " - " + allScores[i].score + "";
     }
-    
-    }
+}
 
-    //Get the initials
-    //Get the time (score)
-    //localstorage -> [{}, {}, {}] -> {initials, score}
-    //localstorage.set(initials, score) //current user
-    //hide the endScreen
-    //show HighScore scree or new page
-    //get all users localstorage -> sort by score highest to lowest
-    //highscore screen have replay button
 
 function goBack() {
     highScoreScreen.setAttribute('class', 'hide');
     startScreen.removeAttribute('class');
-    
+    goBackBtn.addEventListener('reset');
 }
 
 function clear() {
-    window.localStorage.setItem('scores', "");
+    window.localStorage.setItem('scores', '');
     scoreList.textContent = "";
-
 }
 
 

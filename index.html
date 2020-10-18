@@ -9,16 +9,17 @@
 </head>
 <body>
     <header>
-        <div>
+        <div class="header-items">
             <a href="">View high score</a>
             <h3 id="timeContainer">Time: <span id="timer"></span></h3>
         </div>
     </header>
 
     <div id="main">
-        <div id="startScreen">
+        <div id="startScreen" class="startMenu">
             <h1>Coding Quiz Challenge</h1>
-            <h3>Try to answer the following code-related questions within the time limit. Keep in mind that correct answers will penalize your score/time by ten seconds!</h3>
+            <h3>Try to answer the following code-related questions within the time limit. 
+                <br>Keep in mind that correct answers will penalize your score/time by ten seconds!</h3>
             <button id="startQuizBtn">Start Quiz</button>
         </div>
         <div id="questionScreen" class="hide">
@@ -35,7 +36,7 @@
             <button id="submitInit">Submit</button>
         </div>
         <div id="highScoreScreen" class="hide">
-            <h1 id="highScoreTitle">High scores</h1>
+            <h1 id="highScoreTitle">High Scores</h1>
             <div id="scoreList"></div>
             <button id="backBtn">Go back</button>
             <button id="clearBtn">Clear high scores</button>
