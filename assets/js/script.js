@@ -113,17 +113,17 @@ function gameEnd() {
 }
 
 function submit() {
+    highScoreScreen.removeAttribute('class');
+    endScreen.setAttribute('class', 'hide');
     var initialsEl = document.getElementById('initial');
     var initials = initialsEl.value.trim();
     var playerScore = {score:time, initials:initials}
-    highScoreScreen.removeAttribute('class');
-    endScreen.setAttribute('class', 'hide');
     var allScores = JSON.parse(window.localStorage.getItem('scores')) || []
     allScores.push(playerScore);
     window.localStorage.setItem('scores', JSON.stringify(allScores));
     scoreList.textContent = "";
     for(var i = 0; i < allScores.length; i++) {
-        scoreList.textContent = scoreList.textContent + (i+1) + ". " + allScores[i].initials + " - " + allScores[i].score + "";
+        scoreList.textContent = scoreList.textContent + (i+1) + ". " + allScores[i].initials + " - " + allScores[i].score + " ";
     }
 }
 
