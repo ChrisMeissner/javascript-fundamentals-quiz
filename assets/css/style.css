@@ -21,8 +21,10 @@
 }
 
 #feedback {
+    border-top: solid 1px grey;
     font-size: 25px;
     color: grey;
+    margin: 5px 250px;
 }
 
 button {

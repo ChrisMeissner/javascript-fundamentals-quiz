@@ -15,17 +15,20 @@
     </header>
 
     <div id="main">
+        <!-- Start Screen -->
         <div id="startScreen" class="startMenu">
             <h1>Javascript Fundamentals Quiz</h1>
             <h3>Try to answer the following code-related questions within the time limit. 
                 <br>Keep in mind that correct answers will penalize your score/time by ten seconds!</h3>
             <button id="startQuizBtn">Start Quiz</button>
         </div>
+        <!-- Question Screen -->
         <div id="questionScreen" class="hide">
             <h1 id="questionTitle"></h1>
             <div id="choices"></div>
-            <div id="feedback"></div>
+            <div id="feedback" class="hide"></div>
         </div>
+        <!-- End Screen -->
         <div id="endScreen" class="hide">
             <h1 class="endGreeting">All done!</h1>
             <p>Your final score is <span id="finalScore"></span></p>
@@ -34,6 +37,7 @@
             </p>
             <button id="submitInit">Submit</button>
         </div>
+        <!-- High Score Screen -->
         <div id="highScoreScreen" class="hide">
             <h1 id="highScoreTitle">High Scores</h1>
             <div id="scoreList"></div>

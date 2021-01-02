@@ -1,5 +1,6 @@
-var body = document.body;
+// Global Variables
 
+var body = document.body;
 var startBtn = document.getElementById('startQuizBtn');
 var startScreen = document.getElementById('startScreen');
 var questionScreen = document.getElementById('questionScreen');
@@ -8,6 +9,7 @@ var timerEl = document.getElementById('timer');
 var timerContEl = document.getElementById('timeContainer');
 var choicesEl = document.getElementById('choices');
 var feedbackEl = document.getElementById('feedback');
+var feedbackBorder = document.getElementById('feedbackBorder');
 var submitBtn = document.getElementById('submitInit');
 var goBackBtn = document.getElementById('backBtn');
 var clearHighScoreHistoryBtn = document.getElementById('clearBtn');
@@ -58,7 +60,6 @@ function startQuiz() {
 }
 
 function clock() {
-   
     if(time <= 0 || gameOver) {
         timerEl.textContent = "";
         gameEnd ();
@@ -86,8 +87,10 @@ var questions = function () {
 function checkAnswer() {
     var currentQuestion = questionArray[questionNumber]
     if(this.value === currentQuestion.a) {
+        feedbackEl.removeAttribute('class');
         feedbackEl.textContent = 'Correct!';
     } else {
+        feedbackEl.removeAttribute('class')
         feedbackEl.textContent = 'Incorrect!';
         time = time - 10;
     }
@@ -130,8 +133,7 @@ function goBack() {
 }
 
 function clear() {
-    window.localStorage.setItem('scores', '');
-    scoreList.textContent = "";
+    window.localStorage.clear();
 }
 
 function viewHighScore() {
