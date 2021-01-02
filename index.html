@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-    <title>Coding Quiz Challenge</title>
+    <title>Javascript Fundamentals Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
     <header>
         <div class="header-items">
-            <a href="">View high score</a>
-            <h3 id="timeContainer">Time: <span id="timer"></span></h3>
+        <p id="highScoreLink">View High Scores</p> <p id="timeContainer">Time: <span id="timer"></span></p>
         </div>
     </header>
 
     <div id="main">
         <div id="startScreen" class="startMenu">
-            <h1>Coding Quiz Challenge</h1>
+            <h1>Javascript Fundamentals Quiz</h1>
             <h3>Try to answer the following code-related questions within the time limit. 
                 <br>Keep in mind that correct answers will penalize your score/time by ten seconds!</h3>
             <button id="startQuizBtn">Start Quiz</button>
@@ -30,7 +29,7 @@
         <div id="endScreen" class="hide">
             <h1 class="endGreeting">All done!</h1>
             <p>Your final score is <span id="finalScore"></span></p>
-            <p> Enter your initials
+            <p>Enter your initials
                 <input id="initial" type="text" max="3"></input>
             </p>
             <button id="submitInit">Submit</button>
@@ -38,8 +37,8 @@
         <div id="highScoreScreen" class="hide">
             <h1 id="highScoreTitle">High Scores</h1>
             <div id="scoreList"></div>
-            <button id="backBtn">Go back</button>
-            <button id="clearBtn">Clear high scores</button>
+            <button id="backBtn">Go Back</button>
+            <button id="clearBtn">Clear High Scores</button>
         </div>
     </div>
 

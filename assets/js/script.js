@@ -11,6 +11,7 @@ var feedbackEl = document.getElementById('feedback');
 var submitBtn = document.getElementById('submitInit');
 var goBackBtn = document.getElementById('backBtn');
 var clearHighScoreHistoryBtn = document.getElementById('clearBtn');
+var highScoreLink = document.getElementById('highScoreLink');
 var highScoreScreen = document.getElementById('highScoreScreen');
 var scoreList = document.getElementById('scoreList');
 
@@ -104,8 +105,8 @@ function gameEnd() {
     endScreen.removeAttribute("class");
     var score = document.getElementById('finalScore');
     score.textContent = time;
-    timerEl.setAttribute('class', 'hide');
-    clearInterval(clockInterva);
+    timerContEl.setAttribute('class', 'hide');
+    clearInterval(clockInterval);
 }
 
 function submit() {
@@ -125,14 +126,26 @@ function submit() {
 
 
 function goBack() {
-    highScoreScreen.setAttribute('class', 'hide');
-    startScreen.removeAttribute('class');
-    goBackBtn.addEventListener('reset');
+    window.location.reload();
 }
 
 function clear() {
     window.localStorage.setItem('scores', '');
     scoreList.textContent = "";
+}
+
+function viewHighScore() {
+    highScoreScreen.removeAttribute('class');
+    startScreen.setAttribute('class', 'hide');
+    questionScreen.setAttribute('class', 'hide');
+    endScreen.setAttribute('class', 'hide');
+    timerContEl.setAttribute('class', 'hide');
+    clearInterval(clockInterval);
+    var allScores = JSON.parse(window.localStorage.getItem('scores')) || []
+    scoreList.textContent = "";
+    for(var i = 0; i < allScores.length; i++) {
+        scoreList.textContent = scoreList.textContent + (i+1) + ". " + allScores[i].initials + " - " + allScores[i].score + "";
+    }
 }
 
 
@@ -141,3 +154,4 @@ startBtn.onclick = startQuiz
 submitBtn.onclick = submit
 goBackBtn.onclick = goBack
 clearHighScoreHistoryBtn.onclick = clear
+highScoreLink.onclick = viewHighScore

@@ -1,16 +1,14 @@
-header {
-    display: inline;
-    flex: wrap;
+.header-items {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin: 5px;
 }
 
-header div a{
-    text-decoration: none;
+#highScoreLink {
     color: violet;
-}
-
-header div h3 {
-    float: right;
 }
 
 #main {
@@ -22,10 +20,15 @@ header div h3 {
     flex-direction: column;
 }
 
+#feedback {
+    font-size: 25px;
+    color: grey;
+}
+
 button {
     background: midnightblue;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 5px 250px;
     font-size: 25px;
 }
